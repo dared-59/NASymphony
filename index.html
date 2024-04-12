@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASymphony - Network Attached Storage</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #333; 
+      color: #F7EEDD;
+      
+    }
+
+    nav {
+      background-color: #222;
+    }
+
+    header {
+      color: #008DDA; 
+      background-image: url(bg.gif);
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      position: relative;
+      z-index: 1; 
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75); 
+      z-index: 0; 
+    }
+
+    header h1,
+    header .lead {
+      background-image: -webkit-linear-gradient(0deg, #008DDA 15%, #41C9E2 50%, #008DDA 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    section {
+      padding: 50px 0;
+      background-color: #333; 
+    }
+
+    footer {
+      background-color: #111;
+      color: #ccc; 
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    
+
+    #services {
+      background-color: #222;
+    }
+    #features h2,
+    #services h2,
+    #developers h2{
+      background-image: -webkit-linear-gradient(0deg,#41C9E2 30%, #ACE2E1 70% );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .navbar-brand{
+      background-image: -webkit-linear-gradient(0deg, #008DDA 5%, #41C9E2 50%, #008DDA 95%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    }
+
+    .card {
+      border: none;
+      transition: all 0.3s;
+      background-color: #444; 
+      color: #F7EEDD; 
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      .card-title{
+        color: #ACE2E1
+      }
+      
+    }
+
+    .developer {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .developer img {
+      border-radius: 50%;
+      max-height: 100px;
+      max-width: 100px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+      box-shadow: 0 0 20px rgba(65,201,226, 0.5);
+    }
+
+    .developer img:hover{
+
+      box-shadow: 0 0 25px rgba(65,201,226, 0.8);
+    }
+
+    .lead{
+        opacity: 0;
+    }
+
+
+    
+    .button-64{
+      align-items: center;
+      background-image: linear-gradient(144deg,#008dda, #ACE2E1 50%,#41c9e2);
+      border: 0;
+      border-radius: 8px;
+      box-shadow: rgba(0, 141, 218, 0.3) 0 10px 20px -5px;
+      box-sizing: border-box;
+      color: #111;
+      display: flex;
+      font-size: 20px;
+      justify-content: center;
+      line-height: 1em;
+      max-width: 100%;
+      min-width: 140px;
+      padding: 3px;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .button-64:active,
+    .button-64:hover {
+      outline: 0;
+    }
+
+    .button-64 span{
+      background-color: #555;
+      padding: 16px 25px;
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      transition: 300ms;
+    }
+
+    .button-64:hover span {
+      background: none;
+    }
+
+    @media (min-width: 768px) {
+      .button-64{
+        font-size: 24px;
+        min-width: 70%;
+      }
+    }
+  
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="color: #008DDA; font-size: 25px;">NASymphony</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#benefits">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#developers">Developers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="jumbotron jumbotron-fluid text-center">
+    <div class="container" style="position: relative; z-index: 2;">
+      <h1 class="display-4" id="welcome-message"></h1>
+      <p class="lead">Your solution for efficient and secure network attached storage.</p>
+    </div>
+  </header>
+
+  <section id="features" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Features</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Remote Access</h5>
+              <p class="card-text">Access your files from anywhere with an internet connection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Data Backup</h5>
+              <p class="card-text">Automatically backup your important files for peace of mind.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Security</h5>
+              <p class="card-text">Keep your data safe with advanced security features.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Services</h2>
+        <div class="row ">
+            <div class="col-md-6 mb-4 d-flex justify-content-center">
+                <a href="http://10.12.2.197" target="_blank" class="button1" style="color: inherit; text-decoration: none;">
+                    <button class="button-64" role="button"><span class="text">Open Media Vault</span></button>
+                </a>
+            </div>
+            <div class="col-md-6 mb-4 d-flex justify-content-center">
+                <a href="http://10.12.2.197:32400/web" target="_blank" class="button2" style="color: inherit; text-decoration: none;">
+                    <button class="button-64" role="button"><span class="text">Plex Media Server</span></button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <section id="developers" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">NAS Developers</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="developer">
+            <a href="https://www.linkedin.com/in/harsh-dalal-2aa445234/" target="_blank" style="color: inherit; text-decoration: none;">
+            <img src="developer1.jpg" alt="Developer 1">
+            <h4>Harsh Dalal</h4>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="developer">
+            <a href="https://www.linkedin.com/in/chinmay-hebbale-326485251/" target="_blank" style="color: inherit; text-decoration: none;">
+            <img src="developer2.jpg" alt="Developer 2">
+            <h4>Chinmay Hebbale</h4>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="developer">
+            <a href="https://www.linkedin.com/in/vinit-r-gunaki/" target="_blank" style="color: inherit; text-decoration: none;">
+            <img src="developer3.jpg" alt="Developer 3">
+            <h4>Vinit Gunaki</h4>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="developer">
+            <a href="https://www.linkedin.com/in/aishwarya-hosamani-197139216/" target="_blank" style="color: inherit; text-decoration: none;">
+              <img src="developer4.jpg" alt="Developer 4">
+              <h4>Aishwarya Hosamani</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4">
+    <div class="container text-center">
+      <p>&copy; 2024 NASymphony. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    const welcomeMessage = "Welcome to NASymphony";
+    let i = 0;
+    const speed = 150;
+
+    function typeWelcomeMessage() {
+      if (i < welcomeMessage.length) {
+        document.getElementById("welcome-message").innerHTML += welcomeMessage.charAt(i);
+        i++;
+        setTimeout(typeWelcomeMessage, speed);
+      } else {
+      showLeadText();
+    }
+  }
+
+  function showLeadText() {
+    const leadText = document.querySelector('.lead');
+    leadText.style.opacity = 0;
+    let opacity = 0;
+    const fadeInInterval = setInterval(function() {
+      opacity += 0.1;
+      leadText.style.opacity = opacity;
+      if (opacity >= 1) {
+        clearInterval(fadeInInterval);
+      }
+    }, 100);
+  }
+    typeWelcomeMessage();
+  </script>
+</body>
+</html>
